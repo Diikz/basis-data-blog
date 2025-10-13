@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ubpkarawang2124416255201254.Domain - Relasi di ERD dan Mengapa Many-to-Many Dipecah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- JS dimuat di <head> setelah CSS -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">UBP Karawang Blog</div>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="profile.html">Profile</a>
+                <a href="https://ubpkarawang.ac.id/" target="_blank">UBP Karawang</a>
+                <a href="https://www.instagram.com/andka.d.ilysa?igsh=MW1tM2lmcjhhMTk0aw==" target="_blank">Instagram</a>
+                <!-- TOMBOL TOGGLE TEMA -->
+                <button class="theme-toggle" aria-label="Ganti tema">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Konten Artikel Detail -->
+        <div class="article-detail">
+            <p class="card-meta">Basis Data • 13 Oktober 2025 • Andika Dwi Ilyasa</p>
+            <h2>Apa itu Relasi pada ERD, dan Mengapa Many-to-Many Tidak Baik Digunakan?</h2>
+            <p>Dalam pemodelan Entity-Relationship Diagram (ERD), relasi adalah garis hidup yang mendefinisikan bagaimana entitas (tabel) berinteraksi. Ada tiga jenis relasi utama, namun salah satunya—Many-to-Many—harus selalu dihindari dalam implementasi basis data relasional.</p>
+
+            <h3>Tiga Jenis Utama Relasi pada ERD</h3>
+            <p>Relasi dalam ERD mendefinisikan kardinalitas (jumlah minimum dan maksimum) entitas yang berpartisipasi dalam asosiasi tersebut:</p>
+            <ol>
+                <li><strong>One-to-One (1:1):</strong> Setiap baris di Tabel A berhubungan tepat dengan satu baris di Tabel B, dan sebaliknya (misalnya: Seorang Pegawai memiliki satu Data KTP).</li>
+                <li><strong>One-to-Many (1:N):</strong> Setiap baris di Tabel A dapat berhubungan dengan banyak baris di Tabel B, tetapi setiap baris di Tabel B hanya berhubungan dengan satu baris di Tabel A (misalnya: Seorang Dosen mengajar banyak Mata Kuliah).</li>
+                <li><strong>Many-to-Many (N:M):</strong> Setiap baris di Tabel A dapat berhubungan dengan banyak baris di Tabel B, dan sebaliknya (misalnya: Banyak Mahasiswa mengambil banyak Mata Kuliah).</li>
+            </ol>
+            
+            <h3>Mengapa Relasi Many-to-Many (N:M) Tidak Boleh Diimplementasikan?</h3>
+            <p>Meskipun Many-to-Many valid secara konseptual di ERD, ia tidak dapat langsung diimplementasikan dalam struktur tabel basis data relasional. Ada dua alasan utama:</p>
+
+            <h4>1. Pelanggaran Aturan Kunci (Key Violation)</h4>
+            <p>Jika kita mencoba menempatkan kunci primer dari kedua tabel secara langsung (misalnya ID Mahasiswa di tabel Mata Kuliah, dan ID Mata Kuliah di tabel Mahasiswa), akan terjadi duplikasi data yang tidak terbatas dan melanggar prinsip normalisasi.</p>
+
+            <h4>2. Sulit Menyimpan Atribut Relasi</h4>
+            <p>Relasi Many-to-Many seringkali memiliki data yang terkait dengannya. Contoh, jika Mahasiswa mengambil Mata Kuliah, kita perlu tahu nilai (grade) yang didapatkan mahasiswa tersebut. Nilai (grade) ini bukan milik Mahasiswa saja, dan juga bukan milik Mata Kuliah saja; nilai tersebut milik **hubungan** di antara keduanya.</p>
+
+            <h3>Solusi: Pemecahan Relasi N:M dengan Tabel Penghubung</h3>
+            <p>Relasi Many-to-Many selalu harus dipecah menjadi **dua relasi One-to-Many** menggunakan **Tabel Penghubung (Junction Table)** atau **Tabel Asosiatif**.</p>
+            
+            <p><strong>Contoh Pemecahan: Mahasiswa dan Mata Kuliah</strong></p>
+            <p>Relasi N:M awal: Mahasiswa (N) $\longleftrightarrow$ (M) Mata Kuliah</p>
+
+            <p>Setelah dipecah, akan menjadi:</p>
+            <ol>
+                <li>Tabel **Mahasiswa** $\longleftrightarrow$ **Tabel Nilai** (1:N)</li>
+                <li>Tabel **Mata Kuliah** $\longleftrightarrow$ **Tabel Nilai** (1:N)</li>
+            </ol>
+
+            <p>Tabel Penghubung **Nilai** akan berisi:</p>
+            <ul>
+                <li><strong>ID Mahasiswa (Foreign Key)</strong></li>
+                <li><strong>Kode Mata Kuliah (Foreign Key)</strong></li>
+                <li><strong>Nilai (Atribut Relasi)</strong></li>
+                <li>Kombinasi ID Mahasiswa dan Kode Mata Kuliah menjadi **Primary Key** (Composite Key) di tabel ini.</li>
+            </ul>
+            <p>Dengan demikian, relasi N:M yang tidak dapat diterapkan telah diubah menjadi dua relasi 1:N yang valid dan efisien dalam basis data relasional.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 ubpkarawang2124416255201254.Domain. Semua hak cipta dilindungi.
+    </footer>
+
+</body>
+</html>

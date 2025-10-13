@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ubpkarawang2124416255201254.Domain - Kunci Primer, Asing, dan Kandidat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- JS dimuat di <head> setelah CSS -->
+    <script src="script.js"></script>
+    <style>
+        /* Gaya tambahan untuk tabel di artikel */
+        .article-detail table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            background-color: #1a1a2e; /* BG gelap untuk tabel */
+        }
+        .article-detail th, .article-detail td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #3b3b5c;
+        }
+        .article-detail th {
+            background-color: #00FFFF; /* Warna aksen biru */
+            color: #1a1a2e; /* Teks gelap di header */
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .article-detail td {
+            background-color: #2b2b45; /* Warna baris data */
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">UBP Karawang Blog</div>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="profile.html">Profile</a>
+                <a href="https://ubpkarawang.ac.id/" target="_blank">UBP Karawang</a>
+                <a href="https://www.instagram.com/andka.d.ilysa?igsh=MW1tM2lmcjhhMTk0aw==" target="_blank">Instagram</a>
+                <!-- TOMBOL TOGGLE TEMA -->
+                <button class="theme-toggle" aria-label="Ganti tema">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Konten Artikel Detail -->
+        <div class="article-detail">
+            <p class="card-meta">Basis Data • 13 Oktober 2025 • Andika Dwi Ilyasa</p>
+            <h2>Apa itu Primary Key, Foreign Key dan Candidate Key?</h2>
+            <p>Kunci (Keys) adalah fundamental dalam basis data relasional. Mereka adalah atribut atau sekumpulan atribut yang memungkinkan kita untuk mengidentifikasi baris data secara unik, membangun hubungan, dan memastikan integritas data.</p>
+
+            <h3>1. Primary Key (Kunci Primer)</h3>
+            <p><strong>Primary Key (PK)</strong> adalah atribut atau sekumpulan atribut yang secara unik mengidentifikasi setiap baris (record) dalam sebuah tabel. PK harus memenuhi dua aturan utama:</p>
+            <ol>
+                <li><strong>Unik (Unique):</strong> Setiap nilai harus berbeda dan tidak ada duplikasi.</li>
+                <li><strong>Tidak Boleh NULL (Non-Null):</strong> PK harus selalu memiliki nilai (tidak boleh kosong).</li>
+            </ol>
+            <p><strong>Contoh Penerapan 1:</strong></p>
+            <table>
+                <thead><tr><th>Kode Barang (PK)</th><th>Nama Barang</th><th>Harga</th></tr></thead>
+                <tbody>
+                    <tr><td>BRG001</td><td>Mouse Logitech</td><td>250000</td></tr>
+                    <tr><td>BRG002</td><td>Keyboard Rexus</td><td>450000</td></tr>
+                </tbody>
+            </table>
+            <p>Di tabel di atas, <strong>Kode Barang</strong> adalah Kunci Primer.</p>
+
+            <h3>2. Candidate Key (Kunci Kandidat)</h3>
+            <p><strong>Candidate Key (CK)</strong> adalah atribut atau sekumpulan atribut yang memiliki potensi untuk menjadi Primary Key karena mereka memenuhi syarat unik dan tidak null. Dari semua Kunci Kandidat yang ada, salah satunya akan dipilih menjadi Primary Key.</p>
+            <p><strong>Contoh Penerapan 2:</strong></p>
+            <table>
+                <thead><tr><th>ID Pegawai (CK)</th><th>NIK (CK)</th><th>Email (CK)</th><th>Nama Pegawai</th></tr></thead>
+                <tbody>
+                    <tr><td>101</td><td>321456</td><td>andi@mail.com</td><td>Andi Sulaiman</td></tr>
+                    <tr><td>102</td><td>321457</td><td>budi@mail.com</td><td>Budi Santoso</td></tr>
+                </tbody>
+            </table>
+            <p>Di tabel di atas, <strong>ID Pegawai</strong>, **NIK**, dan **Email** adalah Kunci Kandidat karena masing-masing dapat mengidentifikasi baris secara unik. Setelah dianalisis, kita mungkin memilih **ID Pegawai** sebagai Kunci Primer.</p>
+            
+            <h3>3. Foreign Key (Kunci Asing)</h3>
+            <p><strong>Foreign Key (FK)</strong> adalah atribut (atau sekumpulan atribut) dalam satu tabel yang nilainya merujuk ke Primary Key di tabel lain. FK berfungsi untuk **menghubungkan** dua tabel dan menjaga **integritas referensial** data.</p>
+            <p><strong>Contoh Penerapan 3:</strong></p>
+            <table>
+                <thead><tr><th>Kode Order (PK)</th><th>Tanggal</th><th>ID Pelanggan (FK)</th></tr></thead>
+                <tbody>
+                    <tr><td>ORD001</td><td>2025-10-10</td><td>**P001**</td></tr>
+                    <tr><td>ORD002</td><td>2025-10-11</td><td>**P002**</td></tr>
+                </tbody>
+            </table>
+            <p>Pada tabel di atas, **ID Pelanggan (FK)** merujuk ke **ID Pelanggan (PK)** di Tabel **Pelanggan**. FK memastikan bahwa setiap order hanya dapat dibuat oleh Pelanggan yang benar-benar terdaftar di sistem.</p>
+            
+            <p><strong>Contoh Penerapan 4 & 5 (Gabungan FK dan PK):</strong></p>
+            <p>Seringkali, PK dan FK digunakan bersama-sama untuk memetakan hubungan yang kompleks, seperti di tabel detail transaksi:</p>
+            <table>
+                <thead><tr><th>Kode Order (FK, PK)</th><th>Kode Barang (FK, PK)</th><th>Jumlah</th></tr></thead>
+                <tbody>
+                    <tr><td>ORD001</td><td>BRG001</td><td>2</td></tr>
+                    <tr><td>ORD001</td><td>BRG002</td><td>1</td></tr>
+                </tbody>
+            </table>
+            <p>Di sini, kombinasi **Kode Order** dan **Kode Barang** menjadi Kunci Primer (**Composite Key**), tetapi keduanya juga berfungsi sebagai Kunci Asing, merujuk ke tabel **Order** dan **Barang** (Contoh 4: FK ke Order; Contoh 5: FK ke Barang).</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 ubpkarawang2124416255201254.Domain. Semua hak cipta dilindungi.
+    </footer>
+
+</body>
+</html>
