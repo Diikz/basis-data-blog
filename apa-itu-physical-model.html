@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ubpkarawang2124416255201254.Domain - Apa Itu Physical Model?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- JS dimuat di <head> setelah CSS -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Andika Dwi Ilyasa</div>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="profile.html">Profile</a>
+                <a href="https://ubpkarawang.ac.id/" target="_blank">UBP Karawang</a>
+                <a href="https://www.instagram.com/andka.d.ilysa?igsh=MW1tM2lmcjhhMTk0aw==" target="_blank">Instagram</a>
+                <!-- TOMBOL TOGGLE TEMA -->
+                <button class="theme-toggle" aria-label="Ganti tema">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Konten Artikel Detail -->
+        <div class="article-detail">
+            <p class="card-meta">Basis Data • 24 September 2025 • Andika Dwi Ilyasa</p>
+            <h2>Apa Itu Physical Model?</h2>
+            <p>Model fisik (<b>Physical Data Model</b>) adalah representasi detail terakhir dari perancangan basis data. Model ini berfokus pada <b>bagaimana</b> data akan benar-benar disimpan, diakses, dan diatur dalam sistem Basis Data Management System (DBMS) yang spesifik.</p>
+
+            <h3>Transformasi dari Model Logis</h3>
+            <p>Model fisik mengambil skema dari Model Logis dan menyesuaikannya dengan batasan dan fitur dari DBMS yang dipilih (misalnya MySQL, PostgreSQL, atau SQL Server). Hal-hal teknis yang didefinisikan dalam model fisik meliputi:</p>
+            <ul>
+                <li><b>Tipe Data Spesifik</b>: Mengganti tipe data generik (seperti "angka") menjadi tipe data spesifik DBMS (misalnya `INT`, `VARCHAR(255)`, `DATETIME`).</li>
+                <li><b>Indeks (Indexes)</b>: Penentuan kolom mana yang akan diindeks untuk mempercepat pengambilan data (kueri).</li>
+                <li><b>Partisi dan Fragmentasi</b>: Strategi untuk memecah tabel besar menjadi bagian-bagian yang lebih kecil untuk meningkatkan kinerja.</li>
+                <li><b>Batasan Teknis</b>: Definisi <b>Primary Keys</b>, <b>Foreign Keys</b>, <b>NULL/NOT NULL</b>, dan batasan unik lainnya.</li>
+            </ul>
+
+            <h3>Pentingnya Optimasi Kinerja</h3>
+            <p>Model fisik adalah tahap di mana keputusan desain memiliki dampak langsung pada kinerja dan efisiensi penyimpanan basis data. Perancangan fisik yang buruk dapat menyebabkan waktu respons yang lambat, bahkan pada data yang terstruktur dengan baik secara logis. Oleh karena itu, optimasi kinerja adalah pertimbangan utama dalam tahap ini.</p>
+            
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Andika Dwi Ilyasa. Semua hak cipta dilindungi.
+    </footer>
+
+</body>
+</html>

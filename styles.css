@@ -1,0 +1,351 @@
+/* --- Global Variables for Dark Theme (FUTURISTIC BLUE) --- */
+:root {
+    --bg-color: #0d1117; /* Very Dark Blue/Github Dark */
+    --text-color: #c9d1d9; /* Light Grey Text */
+    --accent-color: #00FFFF; /* Electric Blue Accent */
+    --card-bg: rgba(255, 255, 255, 0.05); /* Semi-transparent background for glass effect */
+    --link-hover: #00BFFF; /* Deep sky blue on hover */
+    --border-color: rgba(255, 255, 255, 0.1); /* Light border for glass */
+    --logo-color: var(--accent-color);
+    --button-bg: var(--accent-color);
+    --button-text: var(--bg-color);
+}
+
+/* --- Light Mode Variables --- */
+.light-mode {
+    --bg-color: #f0f2f5; /* Light Grey Background */
+    --text-color: #333333; /* Dark Text */
+    --accent-color: #1e88e5; /* Primary Blue Accent */
+    --card-bg: rgba(255, 255, 255, 0.9); /* Opaque white card for light glass */
+    --link-hover: #1565c0; 
+    --border-color: rgba(0, 0, 0, 0.1);
+    --logo-color: var(--accent-color);
+    --button-bg: var(--accent-color);
+    --button-text: white;
+
+    background-image: none; /* Hapus gradien di mode terang */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s; /* Transisi halus saat ganti mode */
+    
+    /* Menambahkan sedikit gradien latar belakang untuk kesan mendalam (Hanya di Dark Mode) */
+    background-image: radial-gradient(circle at top left, #1f375f 0%, transparent 40%), 
+                      radial-gradient(circle at bottom right, #1f375f 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Override background image in light mode */
+.light-mode body {
+    background-image: none;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    opacity: 0.9;
+}
+
+/* Header/Navigation */
+header {
+    background-color: var(--card-bg); /* Menggunakan card-bg agar transparan/glassy di kedua mode */
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--logo-color);
+}
+
+.nav-links {
+    display: flex; /* Untuk mensejajarkan tautan dan tombol toggle */
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle {
+    margin-left: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: color 0.3s, opacity 0.3s;
+    padding: 5px;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+.light-mode .theme-toggle {
+    color: var(--text-color); /* Warna ikon di mode terang */
+}
+
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 30px;
+    margin-bottom: 50px;
+    background-color: var(--card-bg); 
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px); 
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
+}
+
+/* Light Mode specific shadows and glow adjustments */
+.light-mode .hero {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+.light-mode .hero h1 {
+    text-shadow: none;
+}
+
+
+.hero p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+h2 {
+    font-size: 2em;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Article Grid */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.article-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px); 
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.6), 0 0 15px var(--accent-color); 
+}
+
+.light-mode .article-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.light-mode .article-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.article-card:hover h3 {
+    color: var(--accent-color);
+}
+
+.card-content p {
+    opacity: 0.7;
+    font-size: 0.95em;
+}
+
+.card-meta {
+    font-size: 0.8em;
+    opacity: 0.6;
+    margin-top: 15px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.card-meta span {
+    margin-right: 15px;
+}
+
+.card-link {
+    display: block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-align: center;
+    padding: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.card-link:hover {
+    background-color: var(--link-hover);
+}
+
+/* Specific Article Content */
+.article-detail {
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin-top: 60px;
+}
+.light-mode .article-detail {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.article-detail h2 {
+    font-size: 3.5em;
+    color: var(--accent-color);
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+.light-mode .article-detail h2 {
+    text-shadow: none;
+}
+
+.article-detail h3 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    color: var(--link-hover);
+}
+
+.article-detail p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.article-detail ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.article-detail ul li {
+    background: rgba(0, 255, 255, 0.05);
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+}
+.light-mode .article-detail ul li {
+    background: rgba(30, 136, 229, 0.1); /* Background item list di light mode */
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+    background-color: #0d1117;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+.light-mode footer {
+    background-color: var(--card-bg);
+}
+
+/* Media Query untuk Responsif */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    .hero {
+        padding: 50px 15px;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .article-detail {
+        padding: 25px;
+    }
+    .theme-toggle {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

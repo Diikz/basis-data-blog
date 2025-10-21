@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ubpkarawang2124416255201254.Domain - Attribute, Entitas, dan Relasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- JS dimuat di <head> setelah CSS -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Andika Dwi Ilyasa</div>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="profile.html">Profile</a>
+                <a href="https://ubpkarawang.ac.id/" target="_blank">UBP Karawang</a>
+                <a href="https://www.instagram.com/andka.d.ilysa?igsh=MW1tM2lmcjhhMTk0aw==" target="_blank">Instagram</a>
+                <!-- TOMBOL TOGGLE TEMA -->
+                <button class="theme-toggle" aria-label="Ganti tema">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Konten Artikel Detail -->
+        <div class="article-detail">
+            <p class="card-meta">Basis Data • 6 Oktober 2025 • Andika Dwi Ilyasa</p>
+            <h2>Apa Itu Attribute, Entitas, dan Relasi?</h2>
+            <p>Dalam perancangan basis data, terutama menggunakan **Entity-Relationship Diagram (ERD)**, tiga konsep ini adalah fondasi untuk memetakan dunia nyata ke dalam struktur data digital. Memahami ketiganya sangat krusial untuk membuat skema basis data yang logis dan efisien.</p>
+
+            <h3>1. Entitas (Entity)</h3>
+            <p>Entitas adalah objek, konsep, atau peristiwa dunia nyata yang informasinya perlu disimpan dalam database. Entitas dapat berupa benda berwujud atau konsep abstrak.</p>
+            <ul>
+                <li><strong>Contoh Entitas:</strong> `Mahasiswa`, `Buku`, `Dosen`, `Transaksi`, `Gudang`.</li>
+                <li><strong>Definisi:</strong> Biasanya direpresentasikan sebagai **Tabel** dalam model basis data relasional.</li>
+                <li><strong>Garis Besar:</strong> Entitas adalah kata benda tunggal.</li>
+            </ul>
+
+            <h3>2. Atribut (Attribute)</h3>
+            <p>Atribut adalah properti, karakteristik, atau deskripsi data yang dimiliki oleh suatu entitas.</p>
+            <ul>
+                <li><strong>Contoh Atribut untuk Entitas `Mahasiswa`:</strong> `NIM`, `Nama_Lengkap`, `Tanggal_Lahir`, `Alamat`.</li>
+                <li><strong>Kunci Utama (Primary Key):</strong> Salah satu atribut yang secara unik mengidentifikasi setiap catatan dalam entitas (misalnya, `NIM` untuk entitas `Mahasiswa`).</li>
+                <li><strong>Definisi:</strong> Biasanya direpresentasikan sebagai **Kolom** dalam tabel basis data.</li>
+            </ul>
+
+            <h3>3. Relasi (Relationship)</h3>
+            <p>Relasi adalah keterkaitan atau asosiasi logis antara dua atau lebih entitas. Relasi menjelaskan bagaimana entitas-entitas tersebut berinteraksi satu sama lain.</p>
+            <ul>
+                <li><strong>Contoh Relasi:</strong> Entitas `Dosen` **Mengajar** Entitas `Mata_Kuliah`.</li>
+                <li><strong>Derajat Relasi (Cardinality):</strong> Menjelaskan jumlah minimum dan maksimum entitas yang dapat berpartisipasi dalam relasi. Jenis-jenis umum meliputi:
+                    <ul>
+                        <li>**One-to-One (1:1):** Satu baris dari Tabel A hanya berhubungan dengan satu baris dari Tabel B.</li>
+                        <li>**One-to-Many (1:N):** Satu baris dari Tabel A dapat berhubungan dengan banyak baris dari Tabel B.</li>
+                        <li>**Many-to-Many (N:M):** Banyak baris dari Tabel A dapat berhubungan dengan banyak baris dari Tabel B.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Kesimpulan Pemodelan</h3>
+            <p>Proses perancangan basis data dimulai dengan mengidentifikasi Entitas, mendefinisikan Atribut mereka, dan menentukan Relasi yang menghubungkan mereka. Hasil dari proses ini adalah Model Konseptual (ERD) yang nantinya diubah menjadi Model Fisik (tabel, kolom, dan kunci).</p>
+            
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Andika Dwi Ilyasa. Semua hak cipta dilindungi.
+    </footer>
+
+</body>
+</html>

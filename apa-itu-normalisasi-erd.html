@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apa itu normalisasi pada ERD? - ubpkarawang2124416255201254.Domain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">UBP Karawang Blog</div>
+            <nav class="nav-links">
+                <a href="index.html#beranda">Beranda</a>
+                <a href="profile.html">Profile</a>
+                <a href="https://ubpkarawang.ac.id/" target="_blank">UBP Karawang</a>
+                <a href="https://www.instagram.com/andka.d.ilysa?igsh=MW1tM2lmcjhhMTk0aw==" target="_blank">Instagram</a>
+                <button class="theme-toggle" aria-label="Ganti tema">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="article-detail">
+            <h2>Apa itu Normalisasi pada ERD?</h2>
+            
+            <p>Normalisasi (Normalization) adalah proses sistematis untuk menstrukturkan tabel basis data guna meminimalkan redudansi data dan ketergantungan data yang tidak semestinya. Tujuannya adalah untuk memastikan integritas data dan membuat basis data lebih fleksibel serta efisien. Meskipun normalisasi adalah konsep untuk perancangan basis data relasional (tabel), prinsipnya sangat penting saat menerjemahkan Entity Relationship Diagram (ERD) ke dalam skema fisik.</p>
+
+            <div class="card-meta">
+                <span>20 Oktober 2025</span> • <span><strong>Andika Dwi Ilyasa</strong></span> • <span>Kategori: Basis Data</span>
+            </div>
+
+            <hr>
+
+            <h3>Mengapa Normalisasi Penting?</h3>
+            <p>Normalisasi bertujuan untuk menghilangkan anomali data, yang dapat terjadi selama operasi penyisipan (insert), penghapusan (delete), atau pembaruan (update) data. Anomali ini muncul karena data yang sama disimpan di beberapa tempat (redudansi).</p>
+
+            <h3>Bentuk Normal Dasar (Normal Forms)</h3>
+            <p>Ada beberapa tingkatan bentuk normal, namun yang paling umum dan praktis digunakan adalah 1NF, 2NF, dan 3NF.</p>
+
+            <h4>1. Bentuk Normal Pertama (1NF - First Normal Form)</h4>
+            <p>Sebuah tabel dikatakan berada dalam 1NF jika:</p>
+            <ul>
+                <li>Setiap kolom harus berisi nilai **atomik** (tidak dapat dibagi lagi).</li>
+                <li>Tidak boleh ada **grup pengulangan** (repeating groups) dalam baris.</li>
+                <li>Setiap baris harus unik (memiliki Primary Key).</li>
+            </ul>
+            <p>Sederhananya: Pastikan setiap "cell" hanya berisi satu nilai dan tidak ada kolom berulang.</p>
+
+            <h4>2. Bentuk Normal Kedua (2NF - Second Normal Form)</h4>
+            <p>Sebuah tabel dikatakan berada dalam 2NF jika memenuhi syarat 1NF, DAN:</p>
+            <ul>
+                <li>Semua atribut non-kunci harus bergantung sepenuhnya pada kunci primer komposit (jika ada).</li>
+                <li>Tidak boleh ada **ketergantungan parsial**.</li>
+            </ul>
+            <p>Jika kunci primer Anda hanya terdiri dari satu kolom, maka tabel tersebut sudah otomatis memenuhi 2NF.</p>
+
+            <h4>3. Bentuk Normal Ketiga (3NF - Third Normal Form)</h4>
+            <p>Sebuah tabel dikatakan berada dalam 3NF jika memenuhi syarat 2NF, DAN:</p>
+            <ul>
+                <li>Tidak boleh ada **ketergantungan transitif**.</li>
+                <li>Artinya, atribut non-kunci tidak boleh bergantung pada atribut non-kunci lainnya. Semua harus bergantung hanya pada kunci primer.</li>
+            </ul>
+            <p>Sebagian besar desainer basis data menganggap 3NF sudah cukup untuk kebutuhan aplikasi sehari-hari.</p>
+
+        </div>
+
+    </div>
+
+    <footer>
+        © 2025 ubpkarawang2124416255201254.Domain. Semua hak cipta dilindungi.
+    </footer>
+
+</body>
+</html>
